@@ -2,21 +2,22 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:34:26
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-13 13:20:03
+* @Last Modified time: 2016-07-13 16:34:24
 */
 
 'use strict';
 var gulp = require("gulp");
 var gutil = require("gulp-util");
 var webpack = require("webpack");
-var webpackConfig = require("./webpack.config.js");
+var webpackConfig = require("./webpack.dev.config.js");
 var browser = require("browser-sync");
 
 var browserSync =browser.create();
 var PORT = 4000;
-var LoadMap =[
+var loadMap =[
     'modules/*.*',
     'src/**/*.*',
+    'js/*.*',
     './*.html',
     './web/*.html'
 ];

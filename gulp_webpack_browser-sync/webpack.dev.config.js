@@ -2,7 +2,7 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:58:35
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-13 11:10:48
+* @Last Modified time: 2016-07-13 16:46:42
 */
 
 'use strict';
@@ -10,12 +10,19 @@
 var webpack =require("webpack");
 var path = require("path");
 var fs = require("fs");
+
 var plugins = [];
 var ExtractTextPlugin =  require('extract-text-webpack-plugin');
+var Clean = require('clean-webpack-plugin');
+
+var extractCSS = new ExtractTextPlugin("../style/css/[name].bundle.css") ;
 var optimize = webpack.optimize;
-var extractCSS = new ExtractTextPlugin("../style/css/[name].css") ;
+var clean = new Clean(['./js','./style/css','dist']);
+
+plugins.push(clean);
 plugins.push(extractCSS);
-plugins.push(new optimize.CommonsChunkPlugin('bundle.js'));
+plugins.push(new optimize.CommonsChunkPlugin('js/bundle.js'));
+
 var sourceMap = require("./map.json").source;
 var YYT_PC_Modules = 'link/YYT_PC_Modules/';
 var YYT_PC_Component = 'link/YYT_PC_Component/';
@@ -23,8 +30,10 @@ var YYT_PC_Component = 'link/YYT_PC_Component/';
 var config ={
     entry: sourceMap,
     output: {
-        path: path.resolve(__dirname + '/js'),
-        filename: '[name].js'
+        //path: path.resolve(__dirname + '/js'),
+        path: './dist',
+        filename: 'js/[name].js',
+        publicPath: '/'
     },
     devtool: 'source-map',
     module:{
@@ -34,10 +43,14 @@ var config ={
                 loader:'raw',
                 exclude:/(node_modules)/
             },
+            // {
+            //     test:/\.js$/,
+            //     loader:'eslint-loader',
+            //     exclude:/(node_modules)/
+            // },
             {
-                test:/\.js$/,
-                loader:'eslint-loader',
-                exclude:/(node_modules)/
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader") 
             },
             {
                 test:/\.less$/i,
