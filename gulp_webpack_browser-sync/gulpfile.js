@@ -2,7 +2,7 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:34:26
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-14 15:57:05
+* @Last Modified time: 2016-07-14 16:19:45
 */
 
 'use strict';
@@ -37,6 +37,8 @@ gulp.task("webpack",['clean'], function(callback) {
         gutil.log("[webpack]", stats.toString({
             // output options
         }));
+        
+        browserSync.reload();
         callback();
     });
 });
@@ -48,15 +50,18 @@ gulp.task('server',['webpack'],function () {
             port:PORT
         });
 
-        browserSync.watch(loadMap, function (event, file) {
-            if (event === "change") {
-                gulp.run('webpack',function(){
-                    console.log(55555555);
-                    browserSync.reload()
-                })
+         gulp.watch(loadMap, ['webpack']);
+         gulp.watch(loadMap).on("change",browserSync.reload);
+
+        // browserSync.watch(loadMap, function (event, file) {
+        //     if (event === "change") {
+        //         gulp.run('webpack',function(){
+        //             console.log(55555555);
+        //             browserSync.reload()
+        //         })
                 
-            }
-        });
+        //     }
+        // });
 
 });
 
