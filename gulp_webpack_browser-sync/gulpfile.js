@@ -2,7 +2,7 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:34:26
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-14 15:14:39
+* @Last Modified time: 2016-07-14 15:21:32
 */
 
 'use strict';
@@ -50,7 +50,7 @@ gulp.task('server',['webpack'],function () {
 
         gulp.watch(loadMap, ['webpack']);
         gulp.watch(loadMap).on("change", function() {
-           browser.reload;
+           browser.reload();
         });
         
         // browserSync.watch(loadMap, function (event, file) {
