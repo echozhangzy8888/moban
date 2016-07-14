@@ -1,6 +1,6 @@
 {
     "source":{
-        "index.main":"./src/index.main.js",
+         "index.main":"./src/index.main.js",
          "about.main":"./src/about.main.js"
     }
 }

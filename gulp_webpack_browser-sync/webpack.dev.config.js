@@ -2,7 +2,7 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:58:35
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-13 16:46:42
+* @Last Modified time: 2016-07-14 11:07:10
 */
 
 'use strict';
@@ -15,9 +15,9 @@ var plugins = [];
 var ExtractTextPlugin =  require('extract-text-webpack-plugin');
 var Clean = require('clean-webpack-plugin');
 
-var extractCSS = new ExtractTextPlugin("../style/css/[name].bundle.css") ;
+var extractCSS = new ExtractTextPlugin("../dist/css/[name].bundle.css") ;
 var optimize = webpack.optimize;
-var clean = new Clean(['./js','./style/css','dist']);
+var clean = new Clean(['dist']);
 
 plugins.push(clean);
 plugins.push(extractCSS);

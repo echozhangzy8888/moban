@@ -2,7 +2,7 @@
 * @Author: ZhangZheyi
 * @Date:   2016-07-13 09:34:26
 * @Last Modified by:   ZhangZheyi
-* @Last Modified time: 2016-07-13 16:34:24
+* @Last Modified time: 2016-07-14 15:14:39
 */
 
 'use strict';
@@ -11,24 +11,28 @@ var gutil = require("gulp-util");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.dev.config.js");
 var browser = require("browser-sync");
+var clean = require('gulp-clean');
 
 var browserSync =browser.create();
 var PORT = 4000;
 var loadMap =[
-    'modules/*.*',
     'src/**/*.*',
-    'js/*.*',
-    './*.html',
     './web/*.html'
 ];
 
-gulp.task("webpack", function(callback) {
+gulp.task('clean', function () {
+    return gulp.src('dist/*', {read: false})
+    .pipe(clean());
+});
+
+//打包
+gulp.task("webpack",['clean'], function(callback) {
      var myConfig = Object.create(webpackConfig);
     // run webpack
-    webpack({
+    webpack(
         // configuration
         myConfig
-    }, function(err, stats) {
+    , function(err, stats) {
         if(err) throw new gutil.PluginError("webpack", err);
         gutil.log("[webpack]", stats.toString({
             // output options
@@ -37,18 +41,29 @@ gulp.task("webpack", function(callback) {
     });
 });
 
-gulp.task('server',[],function () {
+gulp.task('server',['webpack'],function () {
     // content...
         browserSync.init({
             server:'./',
             port:PORT
         });
-        gulp.watch(loadMap,['webpack'],function (file) {
-            console.log(file.path)
-            browserSync.reload();
+
+        gulp.watch(loadMap, ['webpack']);
+        gulp.watch(loadMap).on("change", function() {
+           browser.reload;
         });
+        
+        // browserSync.watch(loadMap, function (event, file) {
+        //     if (event === "change") {
+
+        //         console.log(55555555);
+        //         browser.reload
+        //     }
+        // });
+
 });
 
+gulp.task('default',['server', 'webpack']);
 
 // web 目录放置*.html页面
 // style 目录放置*.css文件，另外在此目录中放置了less源文件
