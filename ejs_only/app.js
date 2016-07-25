@@ -7,8 +7,13 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'src')));  
 
 app.get('/', function(req, res) {
-    res.send(require('./ejsRender.js'));
+    res.send(require('./controllers/index.js'));
 });
+
+app.get('/example_function', function(req, res) {
+    res.send(require('./controllers/example_function.js'));
+});
+
 var server = app.listen(3001, function () {
   console.log('Example app listening at http://localhost:3001');
 });

@@ -1,23 +1,13 @@
-var ejs = require('ejs'),
-    fs = require('fs'),
-    path = require('path'),
+/*
+* @Author: ZhangZheyi
+* @Date:   2016-07-25 10:39:23
+* @Last Modified by:   ZhangZheyi
+* @Last Modified time: 2016-07-25 11:05:54
+*/
 
-    read = require('fs').readFileSync,
-    join = require('path').join,
-    str = read(join(__dirname, '/index.html'), 'utf8');
+'use strict';
 
+require('./controllers/index.js');
+require('./controllers/example_function.js');
 
-var datas = JSON.parse(fs.readFileSync('data.json','utf-8')),
-    categories = datas.categories
-
-var ret = ejs.compile(str)({
-  categories:categories,
-  header: 'Hello EJS',
-  names: ['foo2', 'bar', 'baz']
-});
-
-console.log("npn run ejsRender ok!")
-
-module.exports=ret;
-
-
+console.log("ejsRender ok");
