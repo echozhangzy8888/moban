@@ -1,0 +1,30 @@
+
+    <script src="../lib/ejs.js"></script>
+   
+    <ul id="test"></ul>
+
+    <!-- ejs浏览器环境 -->
+    <script type="text/template" id="users">
+        <% if (names.length) { %>
+            <ul>
+              <% names.forEach(function(name) { %>
+                <li>
+                    <%= name %>
+                </li>
+               <% })  %>
+            </ul>
+       <% } %>
+    </script>
+    <script>
+console.log(123)
+        var users = document.getElementById('users').innerHTML;
+        var datas = ['zhangsan', 'lisi', 'wangwu'];
+        var html = ejs.render(users, {
+            names: datas
+        });
+        console.log(html)
+       // document.body.innerHTML = html;
+        document.getElementById('test').innerHTML = html
+  
+    </script>
+

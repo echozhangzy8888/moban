@@ -16,9 +16,16 @@ app.get('/example_function', function(req, res) {
 });
 
 app.get('/example_client', function(req, res) {
-   res.render(__dirname + '/view/example_client.html', {title: 'example_client'});
+   res.render(__dirname + '/view/example_client.html', {title: 'example_client1111'});
    // res.send(require('./controllers/example_function.js'));
 });
+
+
+// app.get('/template', function(req, res) {
+//    res.render(__dirname + '/view/example_client.html', {title: 'example_client1111'});
+//    // res.send(require('./controllers/example_function.js'));
+// });
+
 
 var server = app.listen(3001, function () {
   console.log('Example app listening at http://localhost:3001');

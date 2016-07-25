@@ -6,38 +6,17 @@
     <title>
         <%= title %>
     </title>
-    <!--  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> -->
-    <!-- <script src="/lib/ejs.js"></script> -->
-    <script src="../src/lib/ejs.js"></script>
-    <!-- <link rel='stylesheet' href='/css/style.css' /> -->
+     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+     <link rel='stylesheet' href='/css/style.css' />
+     <script src='/js/example_client.js'></script>
+
 </head>
 
 <body>
     <h2>this is example_client</h2>
-    <ul id="test"></ul>
+    <ul id="aaa"></ul>
 </body>
 <!-- ejs浏览器环境 -->
-<script type="text/template" id="users">
-    <% if (names.length) { %>
-        <ul>
-          <% names.forEach(function(name) { %>
-            <li>
-                <%= name %>
-            </li>
-           <% })  %>
-        </ul>
-   <% } %>
-</script>
-<script>
-onload = function() {
-    var users = document.getElementById('users').innerHTML;
-    var datas = ['zhangsan', 'lisi', 'wangwu'];
-    var html = ejs.render(users, {
-        names: datas
-    });
-    document.body.innerHTML = html;
-    //document.getElementById('test').innerHTML = html
-}
-</script>
+
 
 </html>
