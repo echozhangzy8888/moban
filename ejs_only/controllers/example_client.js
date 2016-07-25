@@ -9,27 +9,16 @@ var ejs = require('ejs'),
 var datasJson = JSON.parse(read('data.json', 'utf-8')),
     categories = datasJson.categories,
     data = {
-        title: 'EJS example_function',
-        users: [
-            { name: 'Tobi', age: 2, species: 'ferret' },
-            { name: 'Loki', age: 2, species: 'ferret2' },
-            { name: 'Jane', age: 6, species: 'ferret' }
-        ],
+        title: 'EJS example_client',
         categories: categories
     }
 
 //var ret = ejs.compile(str)(data);
 var ret = ejs.compile(read(path, 'utf-8'), {filename: path})(data);
 
-console.log("npn run example ok!")
+console.log("npn run example_client ok!")
 
 module.exports = ret;
 
 
-/* 相关选项：
-cache
-filename 缓存的键名称
-scope    函数执行作用域
-debug
-...
-*/
+

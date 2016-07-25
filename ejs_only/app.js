@@ -6,12 +6,18 @@ app.engine('.html', ejs.__express);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'src')));  
 
+console.log(path.join(__dirname, '../src'))
 app.get('/', function(req, res) {
     res.send(require('./controllers/index.js'));
 });
 
 app.get('/example_function', function(req, res) {
     res.send(require('./controllers/example_function.js'));
+});
+
+app.get('/example_client', function(req, res) {
+   res.render(__dirname + '/view/example_client.html', {title: 'example_client'});
+   // res.send(require('./controllers/example_function.js'));
 });
 
 var server = app.listen(3001, function () {

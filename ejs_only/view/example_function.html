@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title><%= title %></title>
     <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
+   <!--     <script src="/js/index.js"></script> -->
     <link rel='stylesheet' href='/css/style.css' />
 </head>
+
 <body>
-<% if (names.length) { %>
-  <ul>
-    <% names.forEach(function (name) { %>
-      <%# Notice how the single quotation mark is escaped in the output HTML %>
-      <li foo='<%= name + "'" %>'><%= name %></li>
-    <% }) %>
-  </ul>
-<% } %>
+    <h2>users1</h2>
 
+    <% function user(user) { %>
+        <li><strong><%=user.name  %></strong> is a <%=user.age  %> years old <%= user.species  %> .</li>
+    <% } %>
 
+    <ul>
+        <% users.map(user)  %>
+    </ul>
 
+    <hr>
 
+    <h2>users2</h2>
+    <ul>
+        <% users.forEach(function (user) { %>
+            <li><strong><%= user.name %></strong> is a <%= user.age %> year old <%= user.species %>.</li>
+        <% })  %>
+    </ul>
+    
 </body>
 </html>
-
-
