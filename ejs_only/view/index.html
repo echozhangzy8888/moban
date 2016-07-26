@@ -7,17 +7,21 @@
     <link rel='stylesheet' href='/css/style.css' />
 </head>
 <body>
+
 <% if (names.length) { %>
   <ul>
-    <% names.forEach(function (name) { %>
+    <% names.forEach(function (name,index) { %>
       <%# Notice how the single quotation mark is escaped in the output HTML %>
-      <li foo='<%= name + "'" %>'><%= name %></li>
+      <li foo='<%= name + "ddda" %>'><%= name %> <% /*= link_to(names[index], 'names/'+names[index]) */%></li> 
     <% }) %>
+
   </ul>
 <% } %>
+<%//- include head.html %>
+<script type="text/javascript">
+  var path = "<%= path %>"
 
-
-
+</script>
 </body>
 </html>
 

@@ -3,7 +3,7 @@ var ejs = require('ejs'),
     read = require('fs').readFileSync,
     join = require('path').join,
    // str = read(join('./view', 'example_function.html'), 'utf8'),
-    path = join('./view', 'example_client.html');
+    path = join('./view', 'example_function.html');
 
 
 var datasJson = JSON.parse(read('data.json', 'utf-8')),

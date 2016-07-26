@@ -10,7 +10,8 @@ var datas = JSON.parse(read('data.json','utf-8')),
 var ret = ejs.compile(str)({
   categories:categories,
   title: 'EJS index',
-  names: ['foo2', 'bar', 'baz']
+  names: ['foo2', 'bar', 'baz'],
+  path:join('view', 'head')
 });
 
 console.log("npn run index ok!")
@@ -18,3 +19,4 @@ console.log("npn run index ok!")
 module.exports=ret;
 
 
+  

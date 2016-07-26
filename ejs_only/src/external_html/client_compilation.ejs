@@ -5,6 +5,7 @@
 
     <!-- ejs浏览器环境 -->
     <script type="text/template" id="users">
+        <h2>this is EJS compilation demo</h2>
         <% if (names.length) { %>
             <ul>
               <% names.forEach(function(name,index) { %>
@@ -17,16 +18,24 @@
             </ul>
        <% } %>
     </script>
+
+
     <script>
 
-        var users = document.getElementById('users').innerHTML;
-        var datas = ['zhangsan', 'lisi', 'wangwu'];
-        var html = ejs.render(users, {
-            names: datas
-        });
-        console.log(html)
-       // document.body.innerHTML = html;
-        document.getElementById('test').innerHTML = html
+     
   
+        // 1. get the EJS template as a string
+        var templ = document.getElementById('users').innerHTML;
+
+        // 2.data to output to the template function
+        var data =  { names: ['loki', 'tobi', 'jane'] };
+
+        //3. stores the rendered HTML
+        var html = ejs.compile(templ)(data);
+        console.log('Rendered HTML:' + html)
+
+        // inject the rendered data to <body>
+        document.body.innerHTML = html;
     </script>
+
 

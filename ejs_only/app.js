@@ -16,15 +16,14 @@ app.get('/example_function', function(req, res) {
 });
 
 app.get('/example_client', function(req, res) {
-   res.render(__dirname + '/view/example_client.html', {title: 'example_client1111'});
-   // res.send(require('./controllers/example_function.js'));
+   res.render(__dirname + '/view/example_client.html', {title: 'client_template'});
 });
 
 
-// app.get('/template', function(req, res) {
-//    res.render(__dirname + '/view/example_client.html', {title: 'example_client1111'});
-//    // res.send(require('./controllers/example_function.js'));
-// });
+app.get('/example_client2', function(req, res) {
+   res.render(__dirname + '/view/example_client2.html', {title: 'EJS compilation demo'});
+});
+
 
 
 var server = app.listen(3001, function () {
