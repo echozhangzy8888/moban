@@ -1,0 +1,10 @@
+@import "base";
+.content {
+    display: inline-block;
+    margin: 0 auto;
+    @include px2rem(width, 750px);
+    @include px2rem(height, 75px);
+    background: black;
+    color: #fff;
+    @include font-dpr(12px);
+}

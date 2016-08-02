@@ -1,0 +1,421 @@
+<div class="row tit">
+    <div class="col-xs-12 col-md-7">
+        <div class="col-md-3"> 表名</div>
+        <div class="col-md-9">
+            <h1>开放式基金发行</h1></div>
+
+    </div>
+    <div class="col-xs-12 col-md-5">
+        <div class="subtit">FUND_BS_OFINFO</div>
+    </div>
+</div>
+<div class="row desc">
+    <div class="col-xs-12 col-md-2">
+        <h3>说明：</h3></div>
+    <div class="col-xs-12 col-md-10">
+        <ul>
+            <li>1.记录开放式基金详细情况</li>
+            <li>主键：(EID)</li>
+            <li>索引：(SECURITYCODE)</li>
+            <li>最后修改日期：0001-01-01 12:00</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="tabbable tabbable-custom">
+        <ul class="nav nav-tabs main-detail-tabs">
+            <li class="active" title="参数与详情">
+                <a href="#tab_0" data-toggle="tab">参数与详情</a>
+            </li>
+            <li class="">
+                <a href="#tab_1" data-toggle="tab">代码与案例</a>
+            </li>
+            <li class="">
+                <a href="#tab_2" data-toggle="tab">用户评论</a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_0">
+                <div class="custom-canshu-table">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center">序号</th>
+                                <th>列名</th>
+                                <th>中文名称</th>
+                                <th>类型</th>
+                                <th>长度</th>
+                                <th>精度</th>
+                                <th>单位</th>
+                                <th>参数类型</th>
+                                <th>空否</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>UPDATEDATE</td>
+                                <td>资料更新日期</td>
+                                <td>DATE</td>
+                                <td>7</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>SECINNERCODE</td>
+                                <td>证券内码</td>
+                                <td>VARCHAR2</td>
+                                <td>200</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>SECINNERCODE</td>
+                                <td>证券内码</td>
+                                <td>VARCHAR2</td>
+                                <td>200</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>SECURITYCODE</td>
+                                <td>基金代码</td>
+                                <td>VARCHAR2</td>
+                                <td>12</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>SECURITYNAME</td>
+                                <td>基金法定名称</td>
+                                <td>VARCHAR2</td>
+                                <td>200</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>SECURITYSNAME</td>
+                                <td>基金简称</td>
+                                <td>VARCHAR2</td>
+                                <td>100</td>
+                                <td>0</td>
+                                <td></td>
+                                <td></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>SECURITYTYPE</td>
+                                <td>基金类型</td>
+                                <td>VARCHAR2</td>
+                                <td>100</td>
+                                <td>0</td>
+                                <td></td>
+                                <td><a href="">基金类型1</a></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>MSFTYPE</td>
+                                <td>MS基金分类</td>
+                                <td>NUMBER</td>
+                                <td>20</td>
+                                <td>8</td>
+                                <td></td>
+                                <td><a href="">MS基金分类</a></td>
+                                <td>&radic;</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-group accordion-parent">
+                    <div class="panel ">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                                                        参数类型
+                                                                        <span class="glyphicon glyphicon-minus" data-toggle="collapse"  href="#parameterType"></span>
+                                                                    </h4>
+                        </div>
+                        <div id="parameterType" class="panel-collapse collapse in ">
+                            <div class="panel-body">
+                                <dl>
+                                    <dt><span class="caret plus"></span>基金类型1(参数唯一标识(NIPMID):127000000026019954) </dt>
+                                    <dd>
+                                        <ul>
+                                            <li>公司型</li>
+                                            <li>契约型 </li>
+                                        </ul>
+                                    </dd>
+
+                                </dl>
+                                <dl>
+                                    <dt><span class="caret plus"></span>MS基金分类(参数唯一标识(NIPMID):127000000026022183)  </dt>
+                                    <dd>
+                                        <ul>
+                                            <li>1 股票型基金 </li>
+                                            <li>10 激进配置型基金 </li>
+                                            <li>11 保守混合型基金 </li>
+                                            <li>12 QDII </li>
+                                            <li>13 其它类型 </li>
+                                            <li>14 纯债基金 </li>
+                                            <li>15 可转债基金 </li>
+                                            <li>2 积极配置型基金 </li>
+                                            <li>3 保守配置型基金 </li>
+                                            <li>31 亚太区不包括日本股票(QDII) </li>
+                                            <li>32 大中华区股票(QDII) </li>
+                                            <li>33 新兴市场股票(QDII) </li>
+                                            <li>34 环球股票(QDII) </li>
+                                            <li>35 行业股票(QDII) </li>
+                                            <li>36 美国股票(QDII) </li>
+                                            <li>37 环球股债混合(QDII) </li>
+                                            <li>38 环球债券(QDII) </li>
+                                            <li>39 商品基金(QDII) </li>
+                                            <li>4 普通债券基金 </li>
+                                            <li>5 短债基金 </li>
+                                            <li>6 保本基金 </li>
+                                            <li>7 货币市场基金 </li>
+                                            <li>8 标准混合型基金 </li>
+                                            <li>9 激进债券型基金</li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel ">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                                                        备注说明
+                                                                        <span class="glyphicon glyphicon-plus" data-toggle="collapse"  href="#remark"></span>
+                                                                    </h4>
+                        </div>
+                        <div id="remark" class="panel-collapse collapse ">
+                            <div class="panel-body">
+                                备注说明备注说明备注说明备注说明
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel ">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                                                        从表列表
+                                                                        <span class="glyphicon glyphicon-plus" data-toggle="collapse"  href="#relationtable"></span>
+                                                                    </h4>
+                        </div>
+                        <div id="relationtable" class="panel-collapse collapse ">
+                            <div class="panel-body">
+                                从表列表从表列表从表列表从表列表从表列表
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab_1">
+                <div class="portlet">
+                    <div class="portlet-body ">
+                        <div class="emace-editor">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab_2">
+                <ul class="media-list comments">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=42%C3%9742&w=42&h=42" alt="通用的占位符图像">
+                        </a>
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <div class="pull-right">
+                                    <span class="praise">赞 <i> (<em>1</em>)</i></span>
+                                    <span class="comment">评论</span>
+                                    <span class="share">分享</span>
+                                </div>
+                                <h4>标题蒙牛</h4>
+                                <span class="publish-time">今天 15:07</span>
+                            </div>
+                            <p>这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。
+                            </p>
+                            <!-- 嵌套的媒体对象 -->
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=42%C3%9742&w=42&h=42" alt="通用的占位符图像">
+                                </a>
+                                <div class="media-body">
+                                    <div class="media-heading">
+                                        <div class="pull-right">
+                                            <span class="praise">赞 <i> (<em>1</em>)</i></span>
+                                            <span class="comment">评论</span>
+                                            <span class="share">分享</span>
+                                        </div>
+                                        <h4>嵌套的媒体标题</h4>
+                                        <span class="publish-time">今天 17:07</span>
+                                    </div>
+                                    这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。
+                                    <!-- 嵌套的媒体对象 -->
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=42%C3%9742&w=42&h=42" alt="通用的占位符图像">
+                                        </a>
+                                        <div class="media-body">
+                                            <div class="media-heading">
+                                                <div class="pull-right">
+                                                    <span class="praise">赞 <i> (<em>1</em>)</i></span>
+                                                    <span class="comment">评论</span>
+                                                    <span class="share">分享</span>
+                                                </div>
+                                                <h4>嵌套的媒体标题</h4>
+                                                <span class="publish-time">今天 17:07</span>
+                                            </div>
+                                            这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 嵌套的媒体对象 -->
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=42%C3%9742&w=42&h=42" alt="通用的占位符图像">
+                                </a>
+                                <div class="media-body">
+                                    <div class="media-heading">
+                                        <div class="pull-right">
+                                            <span class="praise">赞 <i> (<em>1</em>)</i></span>
+                                            <span class="comment">评论</span>
+                                            <span class="share">分享</span>
+                                        </div>
+                                        <h4>嵌套的媒体标题</h4>
+                                        <span class="publish-time">今天 17:07</span>
+                                    </div>
+                                    这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=42%C3%9742&w=42&h=42" alt="通用的占位符图像">
+                        </a>
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <div class="pull-right">
+                                    <span class="praise">赞 <i> (<em>1</em>)</i></span>
+                                    <span class="comment">评论</span>
+                                    <span class="share">分享</span>
+                                </div>
+                                <h4>牛大犇</h4>
+                                <span class="publish-time">今天 15:07</span>
+                            </div>
+                            <p>这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。 这是一些示例文本。这是一些示例文本。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="editor-area">
+                    <div class="userinfo">
+                        yangang
+                    </div>
+                    <div class="editor-style">
+                        <textarea name="editor1" id="editor1" rows="10" cols="80">
+                            This is my textarea to be replaced with CKEditor.
+                        </textarea>
+                    </div>
+                    <div class="editor-save">
+                        <button type="submit" class="btn btn-info btn-lg" id="save"> 发表评论</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    setTimeout(function() {
+  
+        var usage = [{
+                type: 'javascript',
+                code: 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    '    return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    '    return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    '    return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    '    return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    '    var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    'var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    'var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    'var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}' + 'function foo(items) {\n' +
+                    'var x = "All this is syntax highlighted";\n' +
+                    'return x;\n' +
+                    '}',
+                output: 'hello js'
+            }, {
+                type: 'cpp',
+                code: '#include <iostream>\n' +
+                    '#include "DemoClient.h"',
+                output: 'hello c++'
+            }
+
+        ]
+        renderEditor('.emace-editor', usage);
+
+    }, 0)
+
+    function renderEditor(el, usage) {
+        var editor = new Emace({
+            container: el,
+            theme: 'crimson_editor',
+            width: '100%',
+            height: '400px',
+            fontSize: '14px',
+            usages: usage
+        })
+    }
+</script>
