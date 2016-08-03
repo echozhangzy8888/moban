@@ -4,9 +4,9 @@
   "description": "eastmoney-api",
   "main": "dist/main.js",
   "scripts": {
-    "start": "webpack --watch --progress",
-    "src": "webpack --config webpack-src.config.babel.js --watch --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build":"webpack --watch --progress",
+    "server": "webpack-dev-server --hot --inline",
+    "start": "npm run build "
   },
   "author": "eastmoney",
   "license": "ISC",
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "image-webpack-loader": "^1.8.0",
-    "sass-loader": "^3.2.0"
+    "sass-loader": "^3.2.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
