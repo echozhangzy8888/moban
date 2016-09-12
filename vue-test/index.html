@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        window.EM = {};
+    </script>
+    <script src="vue-validator.js"></script>
+    <script src="vueValidate.js"></script>
+</head>
+
+<body id="app" v-cloak>
+    {{ sex }} 
+    <validator name="validation">
+
+
+        <div class="radio">
+            <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="男" v-model="sex">
+   男
+  </label>
+        </div>
+        <div class="radio">
+            <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="女" v-model="sex">
+  女
+  </label>
+        </div>
+
+        <input name="userName" type="text" placeholder="请输入姓名" v-model="userName" v-validate:userName="['chinese']">
+
+    </validator>
+    <button v-on:click="submit()">确定</button>
+</body>
+<script>
+    var data = {
+        a: 1,
+        sex: null
+    }
+    var vm = new Vue({
+        el: '#app',
+        data: data,
+        created: function() {
+            console.log('a is: ' + this.a);
+        },
+        methods: {
+            submit: function() {
+
+                if (this.sex) {
+                    alert(this.sex)
+                } else {
+                    alert("请选择性别");
+                    return;
+                }
+
+                EM.validate(this, function() {
+                    //  alert(this.sex || "请选择性别") 
+
+
+                })
+
+            }
+        }
+    })
+
+    console.log(vm.$data)
+    console.log(vm.$el)
+</script>
+
+</html>
