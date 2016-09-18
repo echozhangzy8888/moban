@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>服务监控平台</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/morris.css" rel="stylesheet">
+    <link href="css/select2.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <!--头部-->
+    <!--#include file="header.html" -->
+    <!--中间部分-->
+    <section>
+        <div class="mainwrapper">
+            <!-- leftpanel -->
+            <!--#include file="left_nav.html" -->
+            <!-- rightpanel -->
+            <div class="mainpanel">
+                <div class="pageheader">
+                    <div class="media">
+                        <div class="pageicon pull-left">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="media-body">
+                            <ul class="breadcrumb">
+                                <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+                                <li>东方财富</li>
+                            </ul>
+                            <h4>服务监控平台</h4>
+                        </div>
+                    </div>
+                    <!-- media -->
+                </div>
+                <!-- pageheader -->
+
+               	<!--#include file="index_main.html" -->
+                <!--#include file="footer.html" -->
+            </div>
+            <!-- mainpanel -->
+        </div>
+        <!-- mainwrapper -->
+    </section>
+
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/select2.min.js"></script>
+
+    <script src="js/flot/jquery.flot.min.js"></script>
+    <script src="js/flot/jquery.flot.resize.min.js"></script>
+    <script src="js/index-chart.js"></script>
+    <!--<script src="js/pop.js"></script>-->
+    <script src="js/util.js"></script>
+    <script src="js/apiSet.js"></script>
+	<script>
+		//模拟检测分数
+		var score = [99,73,55,36];
+		var $score = $('.score');
+		function showSorce(index){
+			$score.html(score[index]+'<span>分</span>');
+			if(index == score.length-1){
+				$('.score-txt').find('h3').html('检测完成');
+				$('.score-txt').find('p').html('检测各项性能指标，指标较差！');
+				return;
+			}
+			$score.animate({'top':'-100px',opacity:0},400,function(){
+				index++;
+				$score.css({'top':0,opacity:1});
+				$score.parent().css('background','#0080'+(100-score[index]));
+				showSorce(index);
+			});
+		}
+		showSorce(0);
+     jQuery('#esm-coreline-select1').select2({
+              minimumResultsForSearch: -1
+     });
+
+      jQuery('#esm-coreline-select2').select2({
+              minimumResultsForSearch: -1
+     });
+        EM.service({
+                                action: 'etmAPITEST',
+                                showLoading: false,
+                                params: {
+                                  	c:'mtest',
+                                    a:'sTableA2',
+                                    hostid:10737,
+                                    itemsid:133979,
+                                    timetype:'latest'
+                                },
+                                success: function(json) {
+                                    console.log(json)
+                                    if (json.Status == 0) {
+                                       console.log(json)
+                                       
+                                    }else{
+                                      // alert(json.Message);
+                                       console.log(json.Message)
+                                    }
+                                }
+                            });	
+	</script>
+</body>
+</html>
